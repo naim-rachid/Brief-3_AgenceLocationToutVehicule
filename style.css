@@ -2,12 +2,14 @@
 
 body
 {
-    background: url('images/fond_jaune.png');
+    /* background: url('images/fond_jaune.png'); */
+    background: url('images/background-vehicule.jpg') no-repeat;
+    background-size: cover;
     font-family: 'Trebuchet MS', Arial, sans-serif;
-    color: #181818;
+    color: #fff9f9;
 }
 
-main
+#bloc_page
 {
     width: 90%;
     margin: auto;
@@ -74,7 +76,7 @@ nav li
 nav a
 {
     font-size: 1.3em;
-    color: #181818;
+    color: #fff9f9;
     padding-bottom: 3px;
     text-decoration: none;
 }
@@ -142,17 +144,18 @@ section table tr {
     margin-bottom: auto; */
   /* margin-top: auto;
   margin-bottom: auto; */
-  width: 100%;
+  width: auto;
   margin-top: 10px;
   height: 100%;
-  border-radius: 5px;
+  border-radius: 43px;
   /* background: url('images/vehicles/moto.jpg') no-repeat; */
   position: relative;
   /* box-shadow: 0px 4px 4px #1c1a19; */
-  margin-bottom: 170px;
+  margin-bottom: 157px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: end; */
+  flex-wrap: wrap;
 }
 
 #banniere_description
@@ -174,7 +177,7 @@ section table tr {
 footer
 {
     display: flex;
-    background:  url('images/ico_top.png') no-repeat top center, url('images/separateur.png') repeat-x top, url('images/ombre.png') repeat-x top;
+    background:  url('images/ico_top.png') no-repeat top center, url('images/separateur.png') repeat-x top; /*, url('images/ombre.png') repeat-x top */
     padding-top: 25px;
     justify-content: space-between;
 }
@@ -202,16 +205,10 @@ footer h1
     /* width: 31%; */
 }
 
-#pages ul
-{
-    list-style-image: url('images/ico_liensexterne.png');
-    padding-left: 2px;
-}
-
 #pages a
 {
     text-decoration: none;
-    color: #760001;
+    color: #0deb3d;
 }
 
 #about
@@ -219,34 +216,18 @@ footer h1
     width: 28%;
 }
 
-#pages
-{
-    /* width: 31%; */
-}
-
-
 #listes_pages
 {
     display: flex;
     justify-content: space-between;
     margin-top: -12px;
+    color: #0deb3d;
 }
 
 #pages ul
 {
     list-style-image: url('images/ico_liensexterne.png');
     padding-left: 13px;
-}
-
-#pages a
-{
-    text-decoration: none;
-    color: #760001;
-}
-
-footer p, footer ul
-{
-    font-size: 0.8em;
 }
 
 footer h3
@@ -274,17 +255,6 @@ button img {
   max-width: 70%;
 }
 
-/*.slide_img {
-   width: 126%;
-  height: 160%;
-  max-width: 100%;
-  max-height: 160%; 
-  width: 60%;
-height: 100%;
-
-/* max-width: 100%;
-max-height: 160%; 
-}*/
 .slide_img {
     height: -webkit-fill-available;
 }
@@ -299,7 +269,7 @@ max-height: 160%;
    visibility: hidden;
    position: absolute;
    top: 0;
-   animation: 12s autoplay1 infinite
+   animation: 20s autoplay1 infinite
 }
 
 @keyframes autoplay1 {
@@ -308,20 +278,17 @@ max-height: 160%;
 }
 
 #slideset > *:nth-child(1) {animation-delay: 0s}
-#slideset > *:nth-child(2) {animation-delay: 4s}
-#slideset > *:nth-child(3) {animation-delay: 8s}
-#slideset > *:nth-child(4) {animation-delay: 12s}
-#slideset > *:nth-child(5) {animation-delay: 16s}
+#slideset > *:nth-child(2) {animation-delay: 6s}
+#slideset > *:nth-child(3) {animation-delay: 12s}
+#slideset > *:nth-child(4) {animation-delay: 18s}
+#slideset > *:nth-child(5) {animation-delay: 24s}
+#sildeset > *:nth-child(6) {animation-delay: 30s};
 
 .slide_img img {
-  /* width: 800px;
-  height: 900px;
-  max-width: 100%;
-  max-height: 100%; */
-  width: 673px;
-  height: 919px;
-  max-width: 200%;
-  max-height: 200%;
+    width: 751px;
+    height: 321px;
+    max-width: 100%;
+    max-height: 200%;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -339,9 +306,95 @@ max-height: 160%;
    color:    #fff;
 }
 
+/* pour la page Gallery */
+#vehicules h1 {
+    text-align: center;
+    font-size: xxx-large;
+}
+section h2 {
+    text-decoration: underline #169A5A;
+    text-underline-offset: 6px;
+}
+
+#motos, #compacts, #berlines, #utilitaires, #engins_chantier, #camions {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+}
+main section div {
+    margin-bottom: 6px;
+    margin-right: 6px;
+}
+
+#citadines {
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+}
+
+/* Desktop pour la page Reservation */
+#start_reserve {
+    text-align: center;
+    font-family: 'Ballpark', serif;
+    font-style: italic;
+    font-size: xxx-large;
+    /* font-family: "Playfair Display",Arial,Helvetica,sans-serif; */
+}
+#estimation_prix {
+    height: 42px;
+    width: 191px;
+    color: white;
+    background: #169A5A;
+    border-radius: 27px;
+    border: none;
+    cursor: pointer;
+}
+#duree_reservation{
+    width: 56px;
+    height: 18px;
+}
+#liste_boite_vitesse, section#liste_vehicule section, #liste_carburant section, #nbr_jours_reservation {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-between;
+    flex-wrap: nowrap;
+}
+section#bloc_estimation_prix {
+    text-align  : center;
+}
+/* Cacher des blocs initialement */
+section#liste_vehicule {
+    display: none;
+}
+#liste_vehicule section#liste_vehicule_pour_manuelle, #liste_vehicule section#liste_vehicule_pour_automatique{
+    display: none;
+}
+section#liste_carburant {
+    display: none;
+}
+#liste_carburant section#liste_carburant_pour_moto, #liste_carburant section#liste_carburant_pour_citadine, #liste_carburant section#liste_carburant_pour_compact, #liste_carburant section#liste_carburant_pour_berline, #liste_carburant section#liste_carburant_pour_utilitaire, #liste_carburant section#liste_carburant_pour_engin_chantier, #liste_carburant section#liste_carburant_pour_camion {
+    display: none;
+}
+
+#nbr_jours_reservation, section#bloc_estimation_prix{
+    display: none;
+}
+
+select {
+    width: 231px;
+    height: 33px;
+}
+
+
+/* section#liste_vehicule section#liste_vehicule_pour_manuelle {
+    display: block;
+} */
+
+
 /* Appliquer le resposive design : media queries */
-@media screen and (max-width: 800px){
-    main {
+@media screen and (max-width: 700px){
+    #bloc_page {
         width: auto;
     }
 
@@ -395,8 +448,9 @@ max-height: 160%;
 
     footer
     {
-          align-items: center;
-          flex-direction: column;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 36px;
     }
 
     #about
@@ -431,11 +485,10 @@ max-height: 160%;
     }
 
     .slide_img img {
-      width: 800px;
-      height: 900px;
-      max-width: 100%;
-      max-height: 100%;
-
+        width: 306px;
+        height: 153px;
+        max-width: 100%;
+        max-height: 100%;
     }
 
     #about, #pages, #subscribe {
@@ -476,4 +529,33 @@ max-height: 160%;
       ::placeholder {
         color: lightgray !important;
       }
+    
+    /* Responsive pour la page Gallery */
+    section {
+        text-align: center;
+    }
+    main section div {
+        margin-bottom: 4px;
+    }
+
+    /* Responsive pour la page Reservation */
+    #start_reserve {
+        /* text-align: center;
+        font-family: 'Ballpark', serif;
+        font-style: italic; */
+        /* font-family: "Playfair Display",Arial,Helvetica,sans-serif; */
+    }
+    #bloc_estimation_prix {
+        text-align: center;
+    }
+    #estimation_prix {
+        height: 49px;
+        width: 209px;
+        color: white;
+        background: #169A5A;
+        border-radius: 23px;
+        border: none;
+        cursor: pointer;
+    }
+
 }

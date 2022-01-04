@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+	<link rel="icon" type="text/css" href="images/logo-head.png">
+    <link rel="stylesheet" href="style.css" />
+    <script src="script_reserve.js" defer></script>
+</head>
+<body>
+    <div id="bloc_page">
+		<header>
+      		<div id="titre_principal">
+          		<div id="logo">
+					<a href="index.html">
+						<img src="images/RentMeNow.png" alt="Logo de RentMeNow" />
+					</a>
+          		</div>
+      		</div>
+    		<nav>
+				<ul>
+					<li><a href="index.html">Accueil</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
+					<li><a href="reservation.html">Reservation</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+    		</nav>
+   		</header>
+        
+        <main>
+            <h1 id="start_reserve">Start a Reservation</h1>
+            <br />
+            <section id="bloc_form">
+                <form>
+                    <section id="liste_boite_vitesse">
+                        <div>
+                            <label for="boite_vitesse">Boite à vitesse : </label>
+                        </div>
+                        <div>
+                            <select name="boite_vitesse" id="boite_vitesse">
+                                <option id="vide" value="vide"></option>
+                                <option id="moto" value="moto">Moto</option>
+                                <option id="manuelle" value="manuelle">Manuelle</option>
+                                <option id="automatique" value="automatique">Automatique</option>
+                            </select>
+                        </div>
+                    </section>
+                    <br />
+                        <br />
+                    <section id="liste_vehicule">
+                        <section id="liste_vehicule_pour_manuelle">
+                            <div>
+                                <label for="type_vehicule_m">Type de véhicule manuelle : </label>
+                            </div>
+                            <div>
+                                <select name="type_vehicule" id="type_vehicule_m">
+                                    <option value="vide"></option>
+                                    <option value="citadine">Citadine</option>
+                                    <option value="compact">Compact</option>
+                                    <option value="utilitaire">Utilitaire</option>
+                                    <option value="engin_chantier">Engin de Chantier</option>
+                                </select>
+                            </div>
+                        </section>
+                        <br />
+                        <section id="liste_vehicule_pour_automatique">
+                            <div>
+                                <label for="type_vehicule_auto">Type de véhicule automatique : </label>
+                            </div>
+                            <div>
+                                <select name="type_vehicule_auto" id="type_vehicule_auto">
+                                    <option value="vide"></option>
+                                    <option value="berline">Berline</option>
+                                    <option value="camion">Camion</option>
+                                </select>
+                            </div>
+                        </section>
+                    </section>
+                    <br />
+                        <br />
+                    <section id="liste_carburant">
+                        <section id="liste_carburant_pour_moto">
+                            <div>
+                                <label for="carburant_moto">Carburant de Moto : </label>
+                            </div>
+                            <div>
+                                <select name="carburant_moto" id="carburant_moto">
+                                    <option value="electrique">Electrique</option>
+                                    <option value="essence">Essence</option>
+                                </select>
+                            </div>
+                        </section>
+                        <br />
+                        <section id="liste_carburant_pour_citadine">
+                            <div>
+                                <label for="carburant_citadine">Carburant de Citadine: </label>
+                            </div>
+                            <div>
+                                <select name="carburant_citadine" id="carburant_citadine">
+                                    <option value="electrique">Electrique</option>
+                                    <option value="hybride">Hybride</option>
+                                    <option value="essence">Essence</option>
+                                    <option value="diesel">Diesel</option>
+                                </select>
+                            </div>
+                        </section>
+                        <br />
+                        <section id="liste_carburant_pour_compact">
+                            <div>
+                                <label for="carburant_compact">Carburant de Compact: </label>
+                            </div>
+                            <div>    
+                                <select name="carburant_compact" id="carburant_compact">
+                                    <option value="hybride">Hybride</option>
+                                    <option value="essence">Essence</option>
+                                    <option value="diesel">Diesel</option>
+                                </select>
+                            </div>
+                        </section>
+                        <br />
+                        <section id="liste_carburant_pour_berline">
+                            <div>
+                                <label for="carburant_berline">Carburant de Berline: </label>
+                            </div>
+                            <div>
+                                <select name="carburant_berline" id="carburant_berline">
+                                    <option value="hybride">Hybride</option>
+                                    <option value="essence">Essence</option>
+                                    <option value="diesel">Diesel</option>
+                                </select>
+                            </div>
+                        </section>
+                        <br />
+                        <section id="liste_carburant_pour_utilitaire">
+                            <div>
+                                <label for="carburant_utilitaire">Carburant d'Utilitaire: </label>
+                            </div>
+                            <div>
+                                <select name="carburant_utilitaire" id="carburant_utilitaire">
+                                    <option value="diesel">Diesel</option>
+                                </select>
+                            </div>
+                        </section>
+                        <br />
+                        <section id="liste_carburant_pour_engin_chantier">
+                            <div>
+                                <label for="engin_chantier">Carburant d'Engin de Chantier: </label>
+                            </div>
+                            <div>
+                                <select name="engin_chantier" id="engin_chantier">
+                                    <option value="essence">Essence</option>
+                                    <option value="diesel">Diesel</option>
+                                </select>
+                            </div>
+                        </section>
+                        <br />
+                        <section id="liste_carburant_pour_camion">
+                            <div>
+                                <label for="carburant_camion">Carburant de Camion: </label>
+                            </div>
+                            <div>
+                                <select name="carburant_camion" id="carburant_camion">
+                                    <option value="diesel">Diesel</option>
+                                </select>
+                            </div>
+                        </section>
+                        <br />
+                        <br />
+                    </section>                    
+                    <section id="nbr_jours_reservation">
+                        <div>
+                            <label for="duree_reservation">Durée de reservation (en jours) : </label>
+                        </div>
+                        <div>
+                            <input type="number" name="duree_reservation" id="duree_reservation" min="1" maxlength="2"/>
+                        </div>
+                    </section>
+                    <br />
+                    <br />
+                    <section id="bloc_estimation_prix">
+                        <button id="estimation_prix"><b>Calculer l'estimation du prix</b></button>
+                        <!-- <input type="submit" name="estimation_prix" id="estimation_prix" value="Calculer l'estimation du prix"/> -->
+                        <div id="result_estimation_prix">
+                            <h3></h3>
+                        </div>
+                    </section>
+                </form>
+            </section>
+            <br />
+        </main>
+
+        <footer>
+			<div id="about">
+				<h3>ABOUT US</h3>
+				<p>Founded in 1974, RentMeNow offers low rental rates and a fun, hassle-free customer experience at the most popular travel destinations throughout the United States, Canada, Mexico, the Caribbean, Latin America, Europe, Asia and the Pacific Rim.</p>
+			</div>
+			<div id="pages">
+				<h3>PAGES</h3>
+				<div id="listes_pages">
+					<ul>
+						<li><a href="index.html">Accueil</a></li>
+						<li><a href="gallery.html">Gallery</a></li>
+						<li><a href="reservation.html">Reservation</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="subscribe">
+				<h3>SUBSCRIBE</h3>
+				<p>Subscribe to our mailing list to get the latest updates.</p>
+				<form   action=""  method="POST">
+					<label for="email"><input type="text" id="email" name="email" placeholder="Email"></label> <button disabled><img src="images/paper-plane-solid.svg" /></button>
+				</form>
+			</div>
+		</footer>
+    </div>
+</body>
+</html>
