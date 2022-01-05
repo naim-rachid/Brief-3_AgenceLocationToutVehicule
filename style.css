@@ -66,11 +66,13 @@ nav ul
 {
     list-style-type: none;
     display: flex;
+    justify-content: center;
 }
 
 nav li
 {
-    margin-right: 15px;
+    /* margin-right: 18px; */
+    margin-left: 50px;
 }
 
 nav a
@@ -133,28 +135,14 @@ section table tr th {
 }
 
 section table tr {
-
+    
 }
 
 /* Bannière */
 .banniere_image
 {
-  margin: auto;
-  /* margin-top: auto;
-    margin-bottom: auto; */
-  /* margin-top: auto;
-  margin-bottom: auto; */
-  width: auto;
-  margin-top: 10px;
-  height: 100%;
-  border-radius: 43px;
-  /* background: url('images/vehicles/moto.jpg') no-repeat; */
-  position: relative;
-  /* box-shadow: 0px 4px 4px #1c1a19; */
-  margin-bottom: 157px;
   display: flex;
   justify-content: center;
-  /* align-items: end; */
   flex-wrap: wrap;
 }
 
@@ -256,39 +244,36 @@ button img {
 }
 
 .slide_img {
-    height: -webkit-fill-available;
+    text-align: center;
+    width: 100%;
 }
 
 /* Automatic animated slide show without js */
 #slideset {
-   height: 10em;
-   position: relative;
 }
 
-#slideset > * {
+/* #slideset > * {
    visibility: hidden;
    position: absolute;
-   top: 0;
-   animation: 20s autoplay1 infinite
-}
+   /* top: 0;
+   animation: 12s autoplay1 infinite
+} */
 
-@keyframes autoplay1 {
+/* @keyframes autoplay1 {
   0% {visibility: visible}
-  33.33% {visibility: hidden}
-}
-
+  16.66% {visibility: hidden}
+} */
+/* 
 #slideset > *:nth-child(1) {animation-delay: 0s}
-#slideset > *:nth-child(2) {animation-delay: 6s}
-#slideset > *:nth-child(3) {animation-delay: 12s}
-#slideset > *:nth-child(4) {animation-delay: 18s}
-#slideset > *:nth-child(5) {animation-delay: 24s}
-#sildeset > *:nth-child(6) {animation-delay: 30s};
+#slideset > *:nth-child(2) {animation-delay: 4s}
+#slideset > *:nth-child(3) {animation-delay: 8s}
+#slideset > *:nth-child(4) {animation-delay: 12s}
+#slideset > *:nth-child(5) {animation-delay: 16s}
+#sildeset > *:nth-child(6) {animation-delay: 18s}; */
 
 .slide_img img {
-    width: 751px;
-    height: 321px;
-    max-width: 100%;
-    max-height: 200%;
+    width: -webkit-fill-available;
+    max-width: 54%;
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
@@ -322,8 +307,7 @@ section h2 {
     flex-flow: wrap;
 }
 main section div {
-    margin-bottom: 6px;
-    margin-right: 6px;
+    margin-block-end: 15px;
 }
 
 #citadines {
@@ -481,14 +465,14 @@ select {
     }
 
     .banniere_image {
-      margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .slide_img img {
-        width: 306px;
-        height: 153px;
-        max-width: 100%;
-        max-height: 100%;
+    width: auto;
+    max-width: 95%;
     }
 
     #about, #pages, #subscribe {
@@ -535,7 +519,7 @@ select {
         text-align: center;
     }
     main section div {
-        margin-bottom: 4px;
+    margin-block-end: -2px;
     }
 
     /* Responsive pour la page Reservation */
