@@ -120,6 +120,7 @@ section table tr td button {
     height: 40px;
     color: white;
     background-color: #169A5A;
+    cursor: pointer;
 }
 
 section table tr td textarea {
@@ -500,6 +501,7 @@ select {
         height: 40px;
         color: white;
         background-color: #169A5A;
+        cursor: pointer;
     }
 
     ::-webkit-input-placeholder { /* Edge */

@@ -1,19 +1,34 @@
 var i = 0; // point de départ
 var images = [];
+var alts = [];
 var time = 3000; // 3 seconds
 
 // Liste des Images
 images[0] = 'home_images/moto_home.png';
+alts[0] = 'Moto.png';
+
 images[1] = 'home_images/compact_home.jpg';
+alts[1] = 'compact.jpg';
+
 images[2] = 'home_images/citadin_home.jpg';
+alts[2] = 'citadin.jpg';
+
 images[3] = 'home_images/berline_home.jpg';
+alts[3] = 'berline.jpg';
+
 images[4] = 'home_images/utilitaire_home.jpg';
+alts[4] = 'utilitaire.jpg';
+
 images[5] = 'home_images/camion_home.jpg';
+alts[5] = 'camion.jpg';
+
 images[6] = 'home_images/engin-chantier_home.jpg';
+alts[6] = 'engin_chantier.jpg';
 
 // Changer Image
 function changeImg() {
     document.querySelector("#slide").src = images[i];
+    document.querySelector("#slide").alt = alts[i];
 
     if (i < images.length - 1) {
         i++;
