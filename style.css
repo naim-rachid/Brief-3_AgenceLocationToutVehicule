@@ -371,6 +371,9 @@ select {
     height: 33px;
 }
 
+.set_center {
+    margin-block-end: 29px;
+}
 
 /* section#liste_vehicule section#liste_vehicule_pour_manuelle {
     display: block;
@@ -404,10 +407,6 @@ select {
         border-bottom: 0;
     }
 
-    #banniere_image{
-        /* display: none; */
-    }
-
     section{
         flex-direction: column;
     }
@@ -419,12 +418,6 @@ select {
 
     #fleche_bulle{
         display: none;
-    }
-
-    #photo_zozor img{
-        width: 110px;
-        float: right;
-        margin-left: 15px;
     }
 
     aside p:last-child{ /* last-child : dernière paragraphe dans 'aside' */
@@ -455,10 +448,6 @@ select {
       display: flex;
       justify-content: space-between;
       width: 90%;
-    }
-
-    #listes_pages li {
-      /*margin-right: 17%;*/
     }
 
     #subscribe {
@@ -525,12 +514,6 @@ select {
     }
 
     /* Responsive pour la page Reservation */
-    #start_reserve {
-        /* text-align: center;
-        font-family: 'Ballpark', serif;
-        font-style: italic; */
-        /* font-family: "Playfair Display",Arial,Helvetica,sans-serif; */
-    }
     #bloc_estimation_prix {
         text-align: center;
     }
@@ -544,4 +527,7 @@ select {
         cursor: pointer;
     }
 
+    .set_center {
+        margin: auto;
+    }
 }
