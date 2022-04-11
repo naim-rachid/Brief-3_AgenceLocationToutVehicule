@@ -2,7 +2,7 @@ var listeCarburantPourCitadine;
 var listeCarburantPourCompact;
 var listeCarburantPourUtilitaire;
 var listeCarburantPourEnginChantier;
-var nbrJoursReservation;
+var nbrJoursReservation = document.querySelector("#nbr_jours_reservation");
 var dureeReservation = document.querySelector('#duree_reservation');
 // Les pourcentage de boite à vitesse
 const pourcentageAutomatique = 0.19; // +19%
@@ -25,23 +25,45 @@ var pourcentageBoiteVitesseSelectionne;
 var tarif;
 var pourcentageCarburantSelectionne;
 var resultEstimPrix = 0;
-//---
-const seclectElmtBoiteVitesse = document.querySelector('#boite_vitesse');
+var resultEstimationPrixH3 = document.querySelector("#result_estimation_prix h3");
 
-boite_vitesse.addEventListener('change', function () {
+var liste_carburant = document.querySelector('#liste_carburant');
+var liste_carburant_pour_moto = document.querySelector('#liste_carburant_pour_moto');
+const SECTION_LIST_BOITE_VITESSE = document.querySelector("#liste_boite_vitesse");
+//---
+const INPUT_RADIO_CHOISIR_MOTO_AUTRE = document.querySelectorAll('input[name="choisir_moto_ou_autre"]');
+for (let inputradiochoisirmotoautreElement of INPUT_RADIO_CHOISIR_MOTO_AUTRE) {
+    resultEstimationPrixH3.innerHTML = "";
+    resultEstimPrix = 0;
+    inputradiochoisirmotoautreElement.addEventListener('change', function () {
+        console.log("INPUT_RADIO_CHOISIR_MOTO_AUTRE = ", INPUT_RADIO_CHOISIR_MOTO_AUTRE);
+        if (inputradiochoisirmotoautreElement.checked && inputradiochoisirmotoautreElement.value == "m") {
+            console.log("m");
+            liste_carburant.style.display = 'flex';
+            liste_carburant_pour_moto.style.display = 'flex';
+            pourcentageBoiteVitesseSelectionne = 0;
+            tarif = tarifMoto;
+        } else {
+            console.log("a");
+            SECTION_LIST_BOITE_VITESSE.style.display = 'flex';
+        }
+    });
+}
+
+const seclectElmtBoiteVitesse = document.querySelector('#boite_vitesse');
+seclectElmtBoiteVitesse.addEventListener('change', function () {
     resultEstimPrix = 0;
     resultEstimationPrixH3.innerHTML = "";
 
     // Les élément du bloc liste_carburant
-    let liste_carburant = document.querySelector('#liste_carburant');
-    var liste_carburant_pour_moto = document.querySelector('#liste_carburant_pour_moto');
+    liste_carburant = document.querySelector('#liste_carburant');
+    liste_carburant_pour_moto = document.querySelector('#liste_carburant_pour_moto');
 
     // Les éléments du bloc liste_vehicule
     var liste_vehicule = document.querySelector('#liste_vehicule');
     var liste_vehicule_pour_manuelle = document.querySelector('#liste_vehicule_pour_manuelle');
     var liste_vehicule_pour_automatique = document.querySelector('#liste_vehicule_pour_automatique');
     // Le bloc de 'saisir le nombre de jours de réservation'
-    nbrJoursReservation = document.querySelector("#nbr_jours_reservation");
     blocEstimationPrix = document.querySelector("#bloc_estimation_prix");
 
     let valeurSelectionnee = seclectElmtBoiteVitesse.options[seclectElmtBoiteVitesse.selectedIndex].value;
@@ -53,9 +75,7 @@ boite_vitesse.addEventListener('change', function () {
         console.log("boite à vitesse choisie = ", valeurSelectionnee);
         liste_carburant.style.display = 'block';
         liste_carburant_pour_moto.style.display = 'flex';
-        //
-        // blocEstimationPrix.style.display = 'block';
-        // blocEstimationPrix.style.textAlign = 'center';
+
         nbrJoursReservation.style.display = 'flex';
         //
         liste_vehicule.style.display = 'none';
@@ -122,7 +142,6 @@ boite_vitesse.addEventListener('change', function () {
 
 //---
 const seclectElmtType_vehicule_m = document.querySelector('#type_vehicule_m');
-
 seclectElmtType_vehicule_m.addEventListener('change', function () {
     resultEstimPrix = 0;
     resultEstimationPrixH3.innerHTML = "";
@@ -257,24 +276,19 @@ seclectElmtTypeVehiculeAuto.addEventListener('change', function () {
 // ---------------- Traitement sur carburants ----------------------
 // Pour Moto
 const seclectElmtCarburantMoto = document.querySelector("#carburant_moto");
-let valeurSelectionne = seclectElmtCarburantMoto.options[seclectElmtCarburantMoto.selectedIndex].value;
-if (valeurSelectionne == "electrique") {
-    // initialiser pourcentageSelectionne par défaut
-    pourcentageCarburantSelectionne = pourcentageElectrique;
-    console.log("--> ligne 264");
-}
-else if (valeurSelectionne == "essence") {
-    pourcentageCarburantSelectionne = pourcentageEssence;
-}
+
 seclectElmtCarburantMoto.addEventListener('change', function () {
     let valeurSelectionne = seclectElmtCarburantMoto.options[seclectElmtCarburantMoto.selectedIndex].value;
+    console.log("valeurSelectionne = ", valeurSelectionne);
     resultEstimationPrixH3.innerHTML = "";
 
     if (valeurSelectionne == "electrique") {
         pourcentageCarburantSelectionne = pourcentageElectrique;
+        nbrJoursReservation.style.display = 'flex';
     }
     else if (valeurSelectionne == "essence") {
         pourcentageCarburantSelectionne = pourcentageEssence;
+        nbrJoursReservation.style.display = 'flex';
     }
 });
 // Pour Citadine
@@ -353,11 +367,10 @@ if (valeurSelectionneCamion == "diesel") {
 // ne prend pas forcément la dernière valeur comme ici dans la ligne 350
 console.log("--> Ligne 353 : pourcentageCarburantSelectionne = ", pourcentageCarburantSelectionne);
 
-var blocEstimationPrix;
+var blocEstimationPrix = document.querySelector("#bloc_estimation_prix");
 var nbrJours = 0;
 dureeReservation.addEventListener('change', function () {
     // console.log("dureeReservation = ", dureeReservation);
-    blocEstimationPrix = document.querySelector("#bloc_estimation_prix");
     if (dureeReservation.value != null) {
         console.log("dureeReservation dans le bloc blocEstimationPrix = ", dureeReservation.value);
         nbrJours = Number(dureeReservation.value);
@@ -373,7 +386,6 @@ dureeReservation.addEventListener('change', function () {
 console.log("--> entrant dans ligne 371 -- resultEstimPrix = ", resultEstimPrix);
 
 const estimationPrix = document.querySelector("#estimation_prix");
-var resultEstimationPrixH3 = document.querySelector("#result_estimation_prix h3");
 
 estimationPrix.addEventListener('click', function (e) {
     e.preventDefault();

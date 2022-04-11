@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="long">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,29 +11,44 @@
 </head>
 <body>
     <div id="bloc_page">
-		<header>
-      		<div id="titre_principal">
-          		<div id="logo">
-					<a href="index.html">
-						<img src="images/RentMeNow.png" alt="Logo de RentMeNow" />
-					</a>
-          		</div>
-      		</div>
-    		<nav>
-				<ul>
-					<li><a href="index.html">Accueil</a></li>
-					<li><a href="gallery.html">Gallery</a></li>
-					<li><a href="reservation.html">Reservation</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-    		</nav>
-   		</header>
+        <header>
+            <div id="titre_principal">
+                <div id="logo">
+                    <a href="index.html">
+                        <img src="images/RentMeNow.png" alt="Logo de RentMeNow" />
+                    </a>
+                </div>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <div>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </div>
+                    <div>
+                        <li><a href="reservation.html">Reservation</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </header>
         
         <main>
             <h1 id="start_reserve">Start a Reservation</h1>
             <br />
             <section id="bloc_form">
                 <form>
+                    <section id="moto_ou_autre">
+                        <div>
+                            <label for="choisir_moto">Moto</label>
+                            <input type="radio" name="choisir_moto_ou_autre" value="m" id="choisir_moto" />
+                        </div>
+                        <div>
+                            <label for="choisir_autre">Autre</label>
+                            <input type="radio" name="choisir_moto_ou_autre" value="a" id="choisir_autre" />
+                        </div>
+                    </section>
+                    <br />
                     <section id="liste_boite_vitesse">
                         <div>
                             <label for="boite_vitesse">Boite à vitesse : </label>
@@ -41,14 +56,13 @@
                         <div>
                             <select name="boite_vitesse" id="boite_vitesse">
                                 <option id="vide" value="vide"></option>
-                                <option id="moto" value="moto">Moto</option>
                                 <option id="manuelle" value="manuelle">Manuelle</option>
                                 <option id="automatique" value="automatique">Automatique</option>
                             </select>
                         </div>
                     </section>
-                    <br />
-                        <br />
+                    <!-- <br /> -->
+                        <!-- <br /> -->
                     <section id="liste_vehicule">
                         <section id="liste_vehicule_pour_manuelle">
                             <div>
@@ -64,7 +78,7 @@
                                 </select>
                             </div>
                         </section>
-                        <br />
+                        <!-- <br /> -->
                         <section id="liste_vehicule_pour_automatique">
                             <div>
                                 <label for="type_vehicule_auto">Type de véhicule automatique : </label>
@@ -78,8 +92,8 @@
                             </div>
                         </section>
                     </section>
-                    <br />
-                        <br />
+                    <!-- <br /> -->
+                        <!-- <br /> -->
                     <section id="liste_carburant">
                         <section id="liste_carburant_pour_moto">
                             <div>
@@ -87,12 +101,12 @@
                             </div>
                             <div>
                                 <select name="carburant_moto" id="carburant_moto">
-                                    <option value="electrique">Electrique</option>
+                                    <option value="electrique" selected>Electrique</option>
                                     <option value="essence">Essence</option>
                                 </select>
                             </div>
                         </section>
-                        <br />
+                        <!-- <br /> -->
                         <section id="liste_carburant_pour_citadine">
                             <div>
                                 <label for="carburant_citadine">Carburant de Citadine: </label>
@@ -106,7 +120,7 @@
                                 </select>
                             </div>
                         </section>
-                        <br />
+                        <!-- <br /> -->
                         <section id="liste_carburant_pour_compact">
                             <div>
                                 <label for="carburant_compact">Carburant de Compact: </label>
@@ -119,7 +133,7 @@
                                 </select>
                             </div>
                         </section>
-                        <br />
+                        <!-- <br /> -->
                         <section id="liste_carburant_pour_berline">
                             <div>
                                 <label for="carburant_berline">Carburant de Berline: </label>
@@ -143,7 +157,7 @@
                                 </select>
                             </div>
                         </section>
-                        <br />
+                        <!-- <br /> -->
                         <section id="liste_carburant_pour_engin_chantier">
                             <div>
                                 <label for="engin_chantier">Carburant d'Engin de Chantier: </label>
@@ -166,7 +180,7 @@
                                 </select>
                             </div>
                         </section>
-                        <br />
+                        <!-- <br /> -->
                         <br />
                     </section>                    
                     <section id="nbr_jours_reservation">
@@ -178,7 +192,7 @@
                         </div>
                     </section>
                     <br />
-                    <br />
+                    <!-- <br /> -->
                     <section id="bloc_estimation_prix">
                         <button id="estimation_prix"><b>Calculer l'estimation du prix</b></button>
                         <!-- <input type="submit" name="estimation_prix" id="estimation_prix" value="Calculer l'estimation du prix"/> -->
@@ -188,7 +202,6 @@
                     </section>
                 </form>
             </section>
-            <br />
         </main>
 
         <footer>

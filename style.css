@@ -1,4 +1,6 @@
 /* Eléments principaux de la page */
+.long {
+}
 
 body
 {
@@ -23,6 +25,7 @@ header
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    width: auto;
 }
 
 #titre_principal
@@ -61,7 +64,6 @@ header h2
 }
 
 /* Navigation */
-
 nav ul
 {
     list-style-type: none;
@@ -71,13 +73,12 @@ nav ul
 
 nav li
 {
-    /* margin-right: 18px; */
     margin-left: 50px;
 }
 
 nav a
 {
-    font-size: 1.3em;
+    font-size: 20px;
     color: #fff9f9;
     padding-bottom: 3px;
     text-decoration: none;
@@ -85,8 +86,12 @@ nav a
 
 nav a:hover
 {
-    color: #760001;
-    border-bottom: 3px solid #760001;
+    color: #0deb3d;
+    border-bottom: 3px solid #0deb3d;
+}
+
+main {
+    min-height: 55vh;
 }
 
 section h1 {
@@ -135,10 +140,6 @@ section table tr th {
     margin-right: 67px;
 }
 
-section table tr {
-    
-}
-
 /* Bannière */
 .banniere_image
 {
@@ -162,7 +163,6 @@ section table tr {
 }
 
 /* Footer */
-
 footer
 {
     display: flex;
@@ -170,14 +170,6 @@ footer
     padding-top: 25px;
     justify-content: space-between;
 }
-
-/*#separateur {
-    position: relative;
-    display: flex;
-    background:  url('images/ico_top.png') no-repeat top center, url('images/separateur.png') repeat-x top, url('images/ombre.png') repeat-x top;
-    padding-top: 25px;
-    justify-content: space-between;
-}*/
 
 footer p, footer ul
 {
@@ -189,15 +181,10 @@ footer h1
     font-size: 1.1em;
 }
 
-#pages
-{
-    /* width: 31%; */
-}
-
 #pages a
 {
     text-decoration: none;
-    color: #0deb3d;
+    color: #fff9f9;
 }
 
 #about
@@ -211,6 +198,12 @@ footer h1
     justify-content: space-between;
     margin-top: -12px;
     color: #0deb3d;
+}
+
+#listes_pages a:hover
+{
+    color: #0deb3d;
+    border-bottom: 3px solid #0deb3d;
 }
 
 #pages ul
@@ -236,12 +229,11 @@ button img {
   width: 20px;
 }
 
-#subscribe input{
-  width: 175px;
-  height: 32px;
-  border-radius: 4px;
-  margin-left: -8px;
-  max-width: 70%;
+#subscribe input {
+    width: 154px;
+    height: 32px;
+    border-radius: 4px;
+    max-width: 60%;
 }
 
 .slide_img {
@@ -304,16 +296,16 @@ section h2 {
 
 #motos, #compacts, #berlines, #utilitaires, #engins_chantier, #camions {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-flow: wrap;
 }
 main section div {
-    margin-block-end: 15px;
+    margin-block-end: 30px;
 }
 
 #citadines {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-flow: wrap;
 }
 
@@ -338,13 +330,16 @@ main section div {
     width: 56px;
     height: 18px;
 }
-#liste_boite_vitesse, section#liste_vehicule section, #liste_carburant section, #nbr_jours_reservation {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+#moto_ou_autre, #liste_boite_vitesse, section#liste_vehicule section, #liste_carburant section, #nbr_jours_reservation {
+    display: none;
+    justify-content: space-around;
     align-content: space-between;
-    flex-wrap: nowrap;
 }
+
+#moto_ou_autre {
+    display: flex;
+}
+
 section#bloc_estimation_prix {
     text-align  : center;
 }
@@ -375,10 +370,35 @@ select {
     margin-block-end: 29px;
 }
 
+#listes_pages ul li {
+    margin-bottom: 5px;
+}
+
+ul div {
+    display: inline-flex;
+}
+
+/*#under_form {*/
+/*    display: flex;*/
+/*    justify-content: left;*/
+/*}*/
+#under_form {
+    border-collapse: collapse;
+    padding:0;
+    margin:0;
+}
+
+#under_form tr td {
+
+}
+
 /* section#liste_vehicule section#liste_vehicule_pour_manuelle {
     display: block;
 } */
 
+#div2 {
+    margin-left: -52px;
+}
 
 /* Appliquer le resposive design : media queries */
 @media screen and (max-width: 700px){
@@ -386,21 +406,32 @@ select {
         width: auto;
     }
 
+    header
+    {
+        /* justify-content: space-between; */
+        width: auto;
+    }
+
     nav{
         width: auto;
-        text-align: left;
+        /* text-align: left; */
     }
 
     nav ul{
-        flex-direction: column;
+        /* flex-direction: column; */
+        justify-content: space-around;
+        list-style-type: none;
+        /* margin: 0;
+        /* padding: 0; */
     }
 
-    nav li{
-        padding-left: 4px;
+    nav li {
+        width: auto;
+        margin-left: 20px;
     }
 
     nav a{
-        font-size: 1.1em;
+        font-size: 0.8em;
     }
 
     nav a:hover{
@@ -461,8 +492,8 @@ select {
     }
 
     .slide_img img {
-    width: auto;
-    max-width: 95%;
+        width: auto;
+        max-width: 95%;
     }
 
     #about, #pages, #subscribe {
@@ -510,7 +541,7 @@ select {
         text-align: center;
     }
     main section div {
-    margin-block-end: -2px;
+    margin-block-end: 8px;
     }
 
     /* Responsive pour la page Reservation */
@@ -529,5 +560,9 @@ select {
 
     .set_center {
         margin: auto;
+    }
+
+    ul div {
+        display: block;
     }
 }
