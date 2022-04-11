@@ -39,7 +39,7 @@ for (let inputradiochoisirmotoautreElement of INPUT_RADIO_CHOISIR_MOTO_AUTRE) {
         console.log("INPUT_RADIO_CHOISIR_MOTO_AUTRE = ", INPUT_RADIO_CHOISIR_MOTO_AUTRE);
         if (inputradiochoisirmotoautreElement.checked && inputradiochoisirmotoautreElement.value == "m") {
             console.log("m");
-            liste_carburant.style.display = 'flex';
+            liste_carburant.style.display = 'block';
             liste_carburant_pour_moto.style.display = 'flex';
             pourcentageBoiteVitesseSelectionne = 0;
             tarif = tarifMoto;
